@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Url_shortening-api",
+  "name": "Url_shortening-api",
   "icons": [
     {
       "src": "favicon.ico",
