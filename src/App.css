@@ -51,6 +51,7 @@ body{
   text-transform: uppercase;
   width: fit-content;
   transition: all .3s;
+  cursor: pointer;
 }
 
 .btn-primary{
@@ -59,10 +60,17 @@ body{
   border: 2px solid transparent;
   border-radius: 3rem;
 }
+
 .btn-primary:hover{
   background: var(--Cyan);
   color: var(--Soft-Red);
   border: 2px solid var(--Cyan);
+}
+
+.btn-shorten{
+  background: var(--Cyan);
+  color: var(--White);
+  border: 2px solid transparent;
 }
 .btn-blue{
   background: var(--Soft-Blue);
@@ -141,6 +149,9 @@ section .container{
 
 /* ============ Section Hero ===============*/
 
+.section__hero {
+  padding-bottom: 8rem;
+}
 .section__hero .container{
   align-items: center;
 }
@@ -163,3 +174,76 @@ section .container{
   flex-direction: column;
   gap: 1.5rem;
 }
+
+
+/*============= Section URL Form ==============*/
+.section__URL{
+  padding: 0;
+  background-color: var(--Gray);
+}
+.section__URL .container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform: translateY(-92px);
+}
+.section__URL form{
+  background-color:  var(--Dark-Violet);
+  background-image: url('./images/bg-shorten-desktop.svg');
+  background-size: cover;
+  padding: 4rem 2rem;
+  border-radius: 0.25rem;
+  display: flex;
+  gap: 0.25rem;
+  width: 100%;
+  flex-direction: column;
+}
+
+.error{
+  font-size: 12px;
+  display: none;
+  color: var(--Red);
+}
+
+.form-group{
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+.section__URL input, .section__URL button{
+  border-radius: 0.25rem;
+}
+.section__URL input{
+  width: 80%;
+  padding-left: 2rem;
+
+}
+.section__URL form .btn-shorten{
+  width: 20%;
+}
+
+.url__list{
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.url__item{
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 1rem;
+  background: var(--White);
+  border-radius: 0.25rem;
+  align-items: center;
+}
+
+.url__btn-group{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+

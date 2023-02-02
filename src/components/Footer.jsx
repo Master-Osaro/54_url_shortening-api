@@ -29,7 +29,7 @@ const Footer=()=>{
                     <a href="">Contact</a>
                 </div>
                 
-                <di className="socials"></di>
+                <div className="socials"></div>
             </div>
         </section>
     </footer>
