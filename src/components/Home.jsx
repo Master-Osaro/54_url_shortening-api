@@ -8,21 +8,21 @@ const Home=()=>{
         <>
             <Header />
             <main>
-                <div className="section section__hero">
+                <section className="section section__hero">
                     <div className="container">
                         <div className="section__hero-text">
                             <h1>More than just shorter links</h1>
                             <p>Build your brand’s recognition and get detailed insights 
                                 on how your links are performing.</p>
-                            <button>Get Started</button>
+                            <button className='btn btn-primary'>Get Started</button>
                         </div>
                         <div className="section__hero-img">
                             <img src={heroIllustration} alt="Illustration of a person working" />
                         </div>
                     </div>
-                </div>
+                </section>
                 <URLShortener />
-                <div className="section section__advancedStat">
+                <section className="section section__advancedStat">
                     <div className="container">
                         <div className="section__advancedStat-text">
                             <h2>Advanced Statistics</h2>
@@ -43,7 +43,7 @@ const Home=()=>{
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </main>
             
             <Footer /> 

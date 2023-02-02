@@ -1,12 +1,12 @@
 const Footer=()=>{
     return <footer>
-        <div className="section section__boost">
+        <section className="section section__boost">
             <div className="container">
                 <h1>Boost your links today</h1>
                 <button>Get Started</button>
             </div>
-        </div>
-        <div className="section section__mainFooter">
+        </section>
+        <section className="section section__mainFooter">
             <div className="container">
                 <div className="logo"></div>
                 <div className="feature-list">
@@ -31,7 +31,7 @@ const Footer=()=>{
                 
                 <di className="socials"></di>
             </div>
-        </div>
+        </section>
     </footer>
 }
 

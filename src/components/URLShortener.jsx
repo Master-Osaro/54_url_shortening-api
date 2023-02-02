@@ -1,9 +1,9 @@
 const URLShortener=()=>{
-    return <div className="section sectionURL">
+    return <section className="section sectionURL">
         <div className="container">
             <input type="text" placeholder="Shorten a link here..."/><button>Shorten It!</button>
         </div>
-    </div>
+    </section>
 }
 
 export default URLShortener
