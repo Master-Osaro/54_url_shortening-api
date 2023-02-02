@@ -17,6 +17,7 @@
 --Red: hsl(0, 87%, 67%);
 
 /* ### Neutral */
+--Light-Gray: hsl(0, 0%, 94%);
 --Gray: hsl(0, 0%, 75%);
 --Grayish-Violet: hsl(257, 7%, 63%);
 --Very-Dark-Blue: hsl(255, 11%, 22%);
@@ -179,7 +180,7 @@ section .container{
 /*============= Section URL Form ==============*/
 .section__URL{
   padding: 0;
-  background-color: var(--Gray);
+  background-color: var(--Light-Gray);
 }
 .section__URL .container{
   width: 100%;
@@ -246,4 +247,78 @@ section .container{
 }
 
 
+
+/*============= Section section__advancedStat ==============*/
+
+.section__advancedStat{
+  background: var(--Light-Gray);
+  padding-bottom: 8rem;
+}
+.section__advancedStat .container{
+  display: flex;
+  flex-direction: column;
+}
+
+.section__advancedStat-text{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5.5rem;
+}
+.section__advancedStat-text h2, .section__advancedStat-text p{
+  max-width: 500px;
+}
+
+.section__advancedStat-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 3;
+}
+.section__advancedStat-gridItem{
+  background-color: var(--White);
+  padding: 1.2rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.25rem;
+}
+
+.icon__wrapper{
+  margin-top: -4rem;
+}
+.icon__bg{
+  background: var(--Dark-Violet);
+  padding: 2rem;
+  width: fit-content ;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+}
+
+.section__advancedStat-grid-wrapper{
+  position: relative;
+}
+
+.underline{
+  height: 15px;
+  width: 100%;
+  background: var(--Cyan);
+  position: absolute;
+  top: 65%;
+  left: 0;
+  z-index: 2;
+}
+
+.section__advancedStat-gridItem-2{
+  transform: translateY(4rem);
+}
+.section__advancedStat-gridItem-3{
+  transform: translateY(8rem);
+}
 
