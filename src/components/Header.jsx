@@ -14,6 +14,7 @@ const Header=()=>{
                 <div className="nav__btns">
                     <a href="" className="nav-link">Login</a>
                     <button className='btn btn-primary'>signup</button>
+                    <button className='menu'>Menu</button>
                 </div>
             </nav>
         </header>
