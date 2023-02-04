@@ -8,10 +8,11 @@ const URLShortener=()=>{
     const [validUrlState, setvalidUrlState] = useState("");
     const [responseDelayed, setResponseDelayed] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
-    
-    const shortenURL=(params)=> {
+
+
+    const shortenURL=async(params)=> {
         if(params){
-            axios.get('https://api.shrtco.de/v2/shorten?url='+params)
+            await axios.get('https://api.shrtco.de/v2/shorten?url='+params)
             .then(function (response) {
                 console.log(response);
                 setUrlList([...urlList, response.data.result] )
@@ -54,10 +55,6 @@ const URLShortener=()=>{
         setTimeout(changeUrlState, 3500);
     }
 
-    const changeApiResponseAfter5secs=()=> {
-        setResponseDelayed(true)
-        setTimeout(setResponseDelayed(false), 5000);
-    }
 
 
     const myStopFunction=()=> {
@@ -69,15 +66,9 @@ const URLShortener=()=>{
         <div className="container">
             <form action="" onSubmit={(e)=>{
                 e.preventDefault();
-                const currentUrlListLength = urlList.length
                 setvalidUrlState(isValid(cURL));
                 validUrlState===true?shortenURL(cURL):shortenURL('');
-                if(currentUrlListLength<urlList.length){
-                    setTimeout(changeApiResponseAfter5secs, 5000);
-                }
                 errorHelper();
-                console.log(currentUrlListLength, urlList.length)
-                
             }}>
                 <div className="form-group">
                     <input type="text" placeholder="Shorten a link here..." className={`url_input ${validUrlState===false?'error-input':''}`} onChange={(e)=>{setcURL(e.target.value)}}/><button type="submit" className="btn btn-shorten">Shorten It!</button>
