@@ -75,6 +75,10 @@ body{
   border: 2px solid transparent;
 }
 
+.btn-copied{
+  background: var(--Dark-Violet);
+}
+
 
 h1,h2,h3,h4,h5,h6{
   color: var(--Very-Dark-Blue);
@@ -316,11 +320,6 @@ section .container{
   flex-direction: column;
 }
 
-.error{
-  font-size: 12px;
-  display: none;
-  color: var(--Red);
-}
 
 .form-group{
   display: flex;
@@ -340,6 +339,8 @@ section .container{
 .section__URL input{
   width: 80%;
   padding-left: 2rem;
+  font-family: inherit;
+  border: none;
 
 }
 .section__URL form .btn-shorten{
@@ -356,6 +357,24 @@ section .container{
     width: 100%;
 
   }
+  
+}
+
+.error{
+  font-size: 12px;
+  display: none;
+  color: var(--Red);
+}
+.error-input{
+  border: 1px solid var(--Red) !important;
+  color: var(--Red) !important;
+}
+.error-input::placeholder{
+  color: var(--Red);
+}
+
+.show{
+  display: block;
 }
 
 .url__list{
@@ -363,6 +382,12 @@ section .container{
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+@media screen and (max-width: 720px) {
+  .url__list{
+    /* display: none; */
+  }
 }
 
 .url__item{
@@ -379,6 +404,16 @@ section .container{
   align-items: center;
   gap: 1rem;
 }
+
+
+@media screen and (max-width: 720px) {
+  .url__item, .url__btn-group{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+}
+
 
 
 
@@ -543,6 +578,7 @@ section .container{
   color: var(--White);
   text-decoration: none;
   transition: all .3s;
+  font-size: 0.9rem;
 }
 .link-list a:hover{
   color: var(--Cyan);

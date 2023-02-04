@@ -9,13 +9,13 @@ const Header=()=>{
                     <img src={logo} alt="" className="logo" />
                     <div className={`nav-list__wrapper ${navOpen===false?'hide':''}`}>
                         <div className="nav-list">
-                            <a href="" className="nav-link">Features</a>
-                            <a href="" className="nav-link">Pricing</a>
-                            <a href="" className="nav-link">Resources</a>
+                            <a href="#features" className="nav-link">Features</a>
+                            <a href="#pricing" className="nav-link">Pricing</a>
+                            <a href="#resources" className="nav-link">Resources</a>
                         </div>
                         <hr className="divider" />
                         <div className="nav-list">
-                            <a href="" className="nav-link">Login</a>
+                            <a href="#login" className="nav-link">Login</a>
                             <button className='btn btn-primary'>Sign Up</button>
                         </div>
                     </div>
