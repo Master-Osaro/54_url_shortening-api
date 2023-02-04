@@ -361,7 +361,7 @@ section .container{
 }
 
 .error{
-  font-size: 12px;
+  font-size: 14px;
   display: none;
   color: var(--Red);
 }
@@ -382,12 +382,6 @@ section .container{
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-@media screen and (max-width: 720px) {
-  .url__list{
-    /* display: none; */
-  }
 }
 
 .url__item{
