@@ -3,7 +3,7 @@ const Footer=()=>{
         <section className="section section__boost">
             <div className="container">
                 <h2>Boost your links today</h2>
-                <button className="btn btn-primary">Get Started</button>
+                <a href="#boostLink" className="btn btn-primary">Get Started</a>
             </div>
         </section>
         <section className="section section__mainFooter">
@@ -13,22 +13,22 @@ const Footer=()=>{
                 </div>
                 <div className="link-list">
                     <h3>Features</h3>
-                    <a href="">Link Shortening</a>
-                    <a href="">Branded Links</a>
-                    <a href="">Analytics</a>
+                    <a href="#boostLink">Link Shortening</a>
+                    <a href="#boostLink">Branded Links</a>
+                    <a href="#analytics">Analytics</a>
                 </div>
                 <div className="link-list">
                     <h3>Resources</h3>
-                    <a href="">Blog</a>
-                    <a href="">Developers</a>
-                    <a href="">Support</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#developers">Developers</a>
+                    <a href="#support">Support</a>
                 </div>
                 <div className="link-list">
                     <h3>Company</h3>
-                    <a href="">About</a>
-                    <a href="">Our Team</a>
-                    <a href="">Careers</a>
-                    <a href="">Contact</a>
+                    <a href="#about">About</a>
+                    <a href="#team">Our Team</a>
+                    <a href="#careers">Careers</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 
                 <div className="socials">

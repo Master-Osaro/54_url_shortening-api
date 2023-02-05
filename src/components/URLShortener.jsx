@@ -1,10 +1,11 @@
 import axios from "axios"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { isValid } from "../utils/validate"
 import CopyBtn from "./CopyBtn";
 const URLShortener=()=>{
+    const savedUrlList = JSON.parse(localStorage.getItem("urlList"));
     const [cURL, setcURL] = useState("");
-    const [urlList, setUrlList] = useState([]);
+    const [urlList, setUrlList] = useState(checkLocalStorage());
     const [validUrlState, setvalidUrlState] = useState("");
     const [responseDelayed, setResponseDelayed] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
@@ -16,7 +17,6 @@ const URLShortener=()=>{
             .then(function (response) {
                 console.log(response);
                 setUrlList([...urlList, response.data.result] )
-                localStorage.setItem("urlList", urlList);
             })
             .catch(function (error) {
                 console.log(error);
@@ -55,23 +55,29 @@ const URLShortener=()=>{
         setTimeout(changeUrlState, 3500);
     }
 
-
-
-    const myStopFunction=()=> {
-    // clearTimeout(myTimeout);
+    function checkLocalStorage() {
+        if (savedUrlList) {
+            return savedUrlList;
+        } 
+        else{
+            return []
+        }
     }
 
+    ///get saved URL List from local storage
+    useEffect(()=>{
+        localStorage.setItem("urlList", JSON.stringify(urlList.slice(-3)));
+    },[urlList])
     
-    return <section className="section section__URL">
+    return <section className="section section__URL" id="boostLink">
         <div className="container">
             <form action="" onSubmit={(e)=>{
                 e.preventDefault();
-                setvalidUrlState(isValid(cURL));
                 validUrlState===true?shortenURL(cURL):shortenURL('');
                 errorHelper();
             }}>
                 <div className="form-group">
-                    <input type="text" placeholder="Shorten a link here..." className={`url_input ${validUrlState===false?'error-input':''}`} onChange={(e)=>{setcURL(e.target.value)}}/><button type="submit" className="btn btn-shorten">Shorten It!</button>
+                    <input type="text" placeholder="Shorten a link here..." className={`url_input ${validUrlState===false?'error-input':''}`} onChange={(e)=>{setcURL(e.target.value)}}/><button type="submit" className="btn btn-shorten" onClick={()=>{setvalidUrlState(isValid(cURL));}}>Shorten It!</button>
                 </div>
                 <p className={`${validUrlState===false?'error show':''} ${responseDelayed?'warn show':''}`}>{validUrlState===""?'':validUrlState===true?"": errorMessage}</p>
             </form>
@@ -89,9 +95,14 @@ const URLShortener=()=>{
                 }
             
             </div>
+            {
+            urlList!==[]?<div className="url__clear-btn">
+                <button className="btn btn-primary btn-clear" onClick={()=>{setUrlList([])}}>Clear List</button>
+            </div>:console.log("Empty")
+            }
             
         </div>
-    </section>
+    </section> 
 }
 
 export default URLShortener

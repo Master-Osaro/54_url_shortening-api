@@ -62,6 +62,7 @@ body{
   color: var(--White);
   border: 2px solid transparent;
   border-radius: 3rem;
+  text-decoration: none;
 }
 
 .btn-primary:hover{
@@ -75,9 +76,11 @@ body{
   border: 2px solid transparent;
 }
 
-.btn-copied{
+.btn-copied, .btn-clear{
   background: var(--Dark-Violet);
 }
+
+
 
 
 h1,h2,h3,h4,h5,h6{
@@ -408,7 +411,11 @@ section .container{
   
 }
 
-
+.url__clear-btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
 
 
 /*============= Section section__advancedStat ==============*/
