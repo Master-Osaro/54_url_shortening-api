@@ -6,7 +6,7 @@ const URLShortener=()=>{
     const savedUrlList = JSON.parse(localStorage.getItem("urlList"));
     const [cURL, setcURL] = useState("");
     const [urlList, setUrlList] = useState(checkLocalStorage());
-    const [validUrlState, setvalidUrlState] = useState("");
+    const [validUrlState, setValidUrlState] = useState("");
     const [responseDelayed, setResponseDelayed] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
@@ -20,7 +20,7 @@ const URLShortener=()=>{
             })
             .catch(function (error) {
                 console.log(error);
-                setvalidUrlState(false)
+                setValidUrlState(false)
                 setErrorMessage(error.response.data.disallowed_reason)
             });
         } else {
@@ -48,7 +48,7 @@ const URLShortener=()=>{
     /*============ TimeOut Functions ===========*/
 
     const changeUrlState=()=> {
-        setvalidUrlState("")
+        setValidUrlState("")
     }
 
     if(validUrlState===false){
@@ -77,13 +77,13 @@ const URLShortener=()=>{
                 errorHelper();
             }}>
                 <div className="form-group">
-                    <input type="text" placeholder="Shorten a link here..." className={`url_input ${validUrlState===false?'error-input':''}`} onChange={(e)=>{setcURL(e.target.value)}}/><button type="submit" className="btn btn-shorten" onClick={()=>{setvalidUrlState(isValid(cURL));}}>Shorten It!</button>
+                    <input type="text" placeholder="Shorten a link here..." className={`url_input ${validUrlState===false?'error-input':''}`} onChange={(e)=>{setcURL(e.target.value)}}/><button type="submit" className="btn btn-shorten" onClick={()=>{setValidUrlState(isValid(cURL));}}>Shorten It!</button>
                 </div>
-                <p className={`${validUrlState===false?'error show':''} ${responseDelayed?'warn show':''}`}>{validUrlState===""?'':validUrlState===true?"": errorMessage}</p>
+                <p className={`${validUrlState===false?'error show':''}`}>{validUrlState===""?'':validUrlState===true?"": errorMessage}</p>
             </form>
             <div className="url__list">
                 {
-                    urlList!==[]?urlList.slice(-3).map((urlItemResponseObj, index)=>{
+                    urlList&&urlList.length?urlList.slice(-3).map((urlItemResponseObj, index)=>{
                         return <div className="url__item" key={index}>
                                     <div className="url">{urlItemResponseObj.original_link}</div>
                                     <div className="url__btn-group">
@@ -96,9 +96,9 @@ const URLShortener=()=>{
             
             </div>
             {
-            urlList!==[]?<div className="url__clear-btn">
+            urlList&&urlList.length?<div className="url__clear-btn">
                 <button className="btn btn-primary btn-clear" onClick={()=>{setUrlList([])}}>Clear List</button>
-            </div>:console.log("Empty")
+            </div>:""
             }
             
         </div>
