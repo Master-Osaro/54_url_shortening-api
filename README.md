@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live Demo]()
+- Live Site URL: [Live Demo](https://url-shortener-o.netlify.app/)
 
 ## My process
 
@@ -58,7 +58,8 @@ Users should be able to:
 
 
 ## Author
-- Frontend Mentor - [@Master-Osaro](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@iyoha_osaro](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@Master-Osaro](https://www.frontendmentor.io/profile/Master-Osaro)
+- Twitter - [@iyoha_osaro](https://twitter.com/iyoha_osaro)
+- Github - [@Master-Osaro](https://github.com/Master-Osaro/)
 
 **Had fun building!** 🚀
