@@ -595,10 +595,12 @@ section .container{
 
 
 /* SVG */
-.twitterIcon path, .facebookIcon path, .instagramIcon, .pinterestIcon {
+.twitterIcon path, .facebookIcon path, .instagramIcon, .pinterestIcon, .githubIcon path{
   fill: #fff;
   transition: all .3s;
 }
-.twitterIcon:hover path, .facebookIcon:hover path, .instagramIcon:hover path,  .pinterestIcon:hover path{
+.twitterIcon:hover path, .facebookIcon:hover path, .instagramIcon:hover path,  .pinterestIcon:hover path,
+.githubIcon:hover path
+{
   fill: var(--Cyan);
 }
