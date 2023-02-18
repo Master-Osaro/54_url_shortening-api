@@ -81,20 +81,20 @@ const URLShortener=()=>{
                 </div>
                 <p className={`${validUrlState===false?'error show':''}`} aria-describedby="url_input" aria-live="assertive">{validUrlState===""?'':validUrlState===true?"": errorMessage}</p>
             </form>
-            <div className="url__list" aria-live="polite">
+            <ul className="url__list" aria-live="polite">
                 {
                     urlList&&urlList.length?urlList.slice(-3).map((urlItemResponseObj, index)=>{
-                        return <div className="url__item" key={index}>
+                        return <li className="url__item" key={index}>
                                     <p className="url">{urlItemResponseObj.original_link}</p>
                                     <div className="url__btn-group">
                                         <p>{urlItemResponseObj.full_short_link}</p>
                                         <CopyBtn urlItemResponseObj={urlItemResponseObj}/>
                                     </div>
-                                </div>
+                                </li>
                     }):""
                 }
             
-            </div>
+            </ul>
             {
             urlList&&urlList.length?<div className="url__clear-btn">
                 <button className="btn btn-primary btn-clear" onClick={()=>{setUrlList([])}}>Clear List</button>
