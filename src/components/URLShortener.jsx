@@ -85,7 +85,7 @@ const URLShortener=()=>{
                 {
                     urlList&&urlList.length?urlList.slice(-3).map((urlItemResponseObj, index)=>{
                         return <div className="url__item" key={index}>
-                                    <div className="url">{urlItemResponseObj.original_link}</div>
+                                    <p className="url">{urlItemResponseObj.original_link}</p>
                                     <div className="url__btn-group">
                                         <p>{urlItemResponseObj.full_short_link}</p>
                                         <CopyBtn urlItemResponseObj={urlItemResponseObj}/>
