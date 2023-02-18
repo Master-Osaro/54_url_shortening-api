@@ -9,7 +9,7 @@ const Header=()=>{
                     <div className="logo__menu">
                         <a href="#home" className="logo__wrapper"><img src={logo} alt="shortly logo" className="logo" /></a> 
                         <div className="nav-menu__wrapper">
-                            <button className='menu' aria-expanded={navOpen} onClick={()=>{
+                            <button className='menu' aria-label='menu' aria-expanded={navOpen} onClick={()=>{
                             setNavOpen(!navOpen)
                             }}><img src={menuIcon} alt="" /></button>
                         </div>
