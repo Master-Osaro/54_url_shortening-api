@@ -77,11 +77,11 @@ const URLShortener=()=>{
                 errorHelper();
             }}>
                 <div className="form-group">
-                    <input type="text" placeholder="Shorten a link here..." className={`url_input ${validUrlState===false?'error-input':''}`} onChange={(e)=>{setcURL(e.target.value)}}/><button type="submit" className="btn btn-shorten" onClick={()=>{setValidUrlState(isValid(cURL));}}>Shorten It!</button>
+                    <input type="text" placeholder="Shorten a link here..."  aria-label="Enter link to shorten" id="url_input" className={`url_input ${validUrlState===false?'error-input':''}`} onChange={(e)=>{setcURL(e.target.value)}}/><button type="submit" className="btn btn-shorten" onClick={()=>{setValidUrlState(isValid(cURL));}}>Shorten It!</button>
                 </div>
-                <p className={`${validUrlState===false?'error show':''}`}>{validUrlState===""?'':validUrlState===true?"": errorMessage}</p>
+                <p className={`${validUrlState===false?'error show':''}`} aria-describedby="url_input" aria-live="assertive">{validUrlState===""?'':validUrlState===true?"": errorMessage}</p>
             </form>
-            <div className="url__list">
+            <div className="url__list" aria-live="polite">
                 {
                     urlList&&urlList.length?urlList.slice(-3).map((urlItemResponseObj, index)=>{
                         return <div className="url__item" key={index}>
