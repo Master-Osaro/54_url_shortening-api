@@ -6,26 +6,29 @@ const Header=()=>{
     return <header>
             <nav>
                 <div className="nav__group">
-                    <img src={logo} alt="" className="logo" />
-                    <div className={`nav-list__wrapper ${navOpen===false?'hide':''}`}>
-                        <div className="nav-list">
-                            <a href="#features" className="nav-link">Features</a>
-                            <a href="#pricing" className="nav-link">Pricing</a>
-                            <a href="#resources" className="nav-link">Resources</a>
+                    <div className="logo__menu">
+                        <a href="#home" className="logo__wrapper"><img src={logo} alt="shortly logo" className="logo" /></a> 
+                        <div className="nav-menu__wrapper">
+                            <button className='menu' aria-expanded={navOpen} onClick={()=>{
+                            setNavOpen(!navOpen)
+                            }}><img src={menuIcon} alt="" /></button>
                         </div>
+                    </div>
+                    
+                    <div className={`nav-list__wrapper ${navOpen===false?'hide':''}`}>
+                        <ul className="nav-list" role="navigation">
+                            <li><a href="#features" className="nav-link">Features</a></li>
+                            <li><a href="#pricing" className="nav-link">Pricing</a></li>
+                            <li><a href="#resources" className="nav-link">Resources</a></li>
+                        </ul>
                         <hr className="divider" />
                         <div className="nav-list">
-                            <a href="#login" className="nav-link">Login</a>
-                            <button className='btn btn-primary'>Sign Up</button>
+                            <li><a href="#login" className="nav-link">Login</a></li>
+                            <li><button className='btn btn-primary'>Sign Up</button></li>
                         </div>
                     </div>
                 </div>
                 
-                <div className="nav-menu__wrapper">
-                    <button className='menu'onClick={()=>{
-                        setNavOpen(!navOpen)
-                    }}><img src={menuIcon} alt="" /></button>
-                </div>
             </nav>
         </header>
 }
