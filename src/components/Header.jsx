@@ -22,10 +22,10 @@ const Header=()=>{
                             <li><a href="#resources" className="nav-link">Resources</a></li>
                         </ul>
                         <hr className="divider" />
-                        <div className="nav-list">
+                        <ul className="nav-list">
                             <li><a href="#login" className="nav-link">Login</a></li>
                             <li><button className='btn btn-primary'>Sign Up</button></li>
-                        </div>
+                        </ul>
                     </div>
                 </div>
                 
