@@ -7,7 +7,7 @@ const Header=()=>{
             <nav>
                 <div className="nav__group">
                     <div className="logo__menu">
-                        <a href="#home" className="logo__wrapper"><img src={logo} alt="shortly logo" className="logo" /></a> 
+                        <a href="#home" aria-label="Company Logo" className="logo__wrapper"><img src={logo} alt="shortly logo" className="logo" /></a> 
                         <div className="nav-menu__wrapper">
                             <button className='menu' aria-label='menu' aria-expanded={navOpen} onClick={()=>{
                             setNavOpen(!navOpen)
