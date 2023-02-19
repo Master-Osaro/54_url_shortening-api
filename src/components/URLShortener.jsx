@@ -71,7 +71,7 @@ const URLShortener=()=>{
     
     return <section className="section section__URL" id="boostLink">
         <div className="container">
-            <form action="" onSubmit={(e)=>{
+            <form onSubmit={(e)=>{
                 e.preventDefault();
                 validUrlState===true?shortenURL(cURL):shortenURL('');
                 errorHelper();
