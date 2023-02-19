@@ -16,7 +16,7 @@ const Header=()=>{
                     </div>
                     
                     <div className={`nav-list__wrapper ${navOpen===false?'hide':''}`}>
-                        <ul className="nav-list" role="navigation">
+                        <ul className="nav-list">
                             <li><a href="#features" className="nav-link">Features</a></li>
                             <li><a href="#pricing" className="nav-link">Pricing</a></li>
                             <li><a href="#resources" className="nav-link">Resources</a></li>
