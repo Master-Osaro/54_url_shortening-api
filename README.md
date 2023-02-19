@@ -47,10 +47,12 @@ Users should be able to:
 
 
 ### What I Learned
-- Mobile Nav with Checkbox hack 
+- Accessibility tags : aria-expanded, aria-label, aria-live, aria-describedby
 
-```js
-    
+```jsx
+    <button className='menu' aria-label='menu' aria-expanded={navOpen} onClick={()=>{
+      setNavOpen(!navOpen)
+    }}><img src={menuIcon} alt="" /></button>
 
 ```
 
